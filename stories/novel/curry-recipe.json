@@ -1,0 +1,74 @@
+{
+  "title": "カレーの作り方",
+  "start": "start",
+  "passages": {
+    "start": {
+      "text": "【カレーの作り方】\n\nおいしいカレーを作れるようになろう！\n\nまずは材料を確認しよう。",
+      "choices": [
+        { "text": "材料を見る", "next": "ingredients" },
+        { "text": "作り方を始める", "next": "step1" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "ingredients": {
+      "text": "【材料】（4人分）\n\n・牛肉または豚肉：300g\n・じゃがいも：3個\n・人参：1本\n・玉ねぎ：2個\n・カレールー：200g\n・水：800ml\n・油：適量",
+      "choices": [
+        { "text": "作り方を始める", "next": "step1" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step1": {
+      "text": "【 Step 1 】\n\n野菜を切る。\n・じゃがいもは一口大\n・人参は乱切り\n・玉ねぎはざく切り",
+      "choices": [
+        { "text": "次へ", "next": "step2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step2": {
+      "text": "【 Step 2 】\n\n鍋に油を入れて熱し、肉を炒める。\n色が変わったらOK。",
+      "choices": [
+        { "text": "次へ", "next": "step3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step3": {
+      "text": "【 Step 3 】\n\n肉を取り出して、同じ鍋で玉ねぎを炒める。\n透き通ってきたらOK。",
+      "choices": [
+        { "text": "次へ", "next": "step4" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step4": {
+      "text": "【 Step 4 】\n\n肉を戻して人参とじゃがいもを加える。\n全体を炒め合わせる。",
+      "choices": [
+        { "text": "次へ", "next": "step5" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step5": {
+      "text": "【 Step 5 】\n\n水を入れて沸騰させる。\nアクを取って弱火で20分煮る。",
+      "choices": [
+        { "text": "次へ", "next": "step6" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "step6": {
+      "text": "【 Step 6 】\n\n火を止めてカレールーを入れる。\nよく溶かしてから弱火で5分煮る。",
+      "choices": [
+        { "text": "完成！", "next": "finish" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "finish": {
+      "text": "【完成】\n\nおいしいカレーができました！\n\nご飯にかけていただこう。\n\nおしまい。",
+      "choices": [
+        { "text": "もう一度作る", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "exit": {
+      "text": "終了します。",
+      "choices": []
+    }
+  }
+}

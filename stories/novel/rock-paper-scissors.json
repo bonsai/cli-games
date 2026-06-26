@@ -1,0 +1,107 @@
+{
+  "title": "シンプルじゃんけん",
+  "start": "start",
+  "passages": {
+    "start": {
+      "text": "【シンプルじゃんけん】\n\n相手：「始めよう！3回合戦で勝敗をつけよう」\n\n「グー」「チョキ」「パー」から選ぼう。",
+      "choices": [
+        { "text": "ゲームを始める", "next": "round1" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "round1": {
+      "text": "【第1回合】\n\nあなたの手は？",
+      "choices": [
+        { "text": "グー", "next": "r1_rock" },
+        { "text": "チョキ", "next": "r1_scissors" },
+        { "text": "パー", "next": "r1_paper" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r1_rock": {
+      "text": "あなたは「グー」を出した！\n相手は「パー」を出した！\n\n結果：負け\n\n現在の成績：0勝1敗",
+      "choices": [
+        { "text": "次へ", "next": "round2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r1_scissors": {
+      "text": "あなたは「チョキ」を出した！\n相手は「グー」を出した！\n\n結果：負け\n\n現在の成績：0勝1敗",
+      "choices": [
+        { "text": "次へ", "next": "round2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r1_paper": {
+      "text": "あなたは「パー」を出した！\n相手は「チョキ」を出した！\n\n結果：勝ち\n\n現在の成績：1勝0敗",
+      "choices": [
+        { "text": "次へ", "next": "round2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "round2": {
+      "text": "【第2回合】\n\nあなたの手は？",
+      "choices": [
+        { "text": "グー", "next": "r2_rock" },
+        { "text": "チョキ", "next": "r2_scissors" },
+        { "text": "パー", "next": "r2_paper" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r2_rock": {
+      "text": "あなたは「グー」を出した！\n相手は「グー」を出した！\n\n結果：引き分け\n\n現在の成績：1勝0敗1分け",
+      "choices": [
+        { "text": "次へ", "next": "round3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r2_scissors": {
+      "text": "あなたは「チョキ」を出した！\n相手は「パー」を出した！\n\n結果：勝ち\n\n現在の成績：2勝0敗1分け",
+      "choices": [
+        { "text": "次へ", "next": "round3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r2_paper": {
+      "text": "あなたは「パー」を出した！\n相手は「グー」を出した！\n\n結果：負け\n\n現在の成績：1勝1敗1分け",
+      "choices": [
+        { "text": "次へ", "next": "round3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "round3": {
+      "text": "【第3回合（決勝）】\n\nあなたの手は？",
+      "choices": [
+        { "text": "グー", "next": "r3_rock" },
+        { "text": "チョキ", "next": "r3_scissors" },
+        { "text": "パー", "next": "r3_paper" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r3_rock": {
+      "text": "あなたは「グー」を出した！\n相手は「チョキ」を出した！\n\n結果：勝ち\n\n最終成績：3勝1敗1分け\n\n【あなたの勝利】",
+      "choices": [
+        { "text": "もう一度", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r3_scissors": {
+      "text": "あなたは「チョキ」を出した！\n相手は「パー」を出した！\n\n結果：負け\n\n最終成績：1勝2敗1分け\n\n【相手の勝利】",
+      "choices": [
+        { "text": "もう一度", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "r3_paper": {
+      "text": "あなたは「パー」を出した！\n相手は「グー」を出した！\n\n結果：勝ち\n\n最終成績：2勝1敗1分け\n\n【あなたの勝利】",
+      "choices": [
+        { "text": "もう一度", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "exit": {
+      "text": "ゲームを終了します。\n\nまた遊んでね！",
+      "choices": []
+    }
+  }
+}

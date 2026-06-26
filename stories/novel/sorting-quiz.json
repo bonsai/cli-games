@@ -1,0 +1,89 @@
+{
+  "title": "ソートクイズ",
+  "start": "start",
+  "passages": {
+    "start": {
+      "text": "【ソートクイズ】\n\n4つのアイテムを順位順に並べ替えよう！\n全部正解したらクリア。",
+      "choices": [
+        { "text": "始める", "next": "q1" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q1": {
+      "text": "【第1問】\n\n次の果物を美味しい順に並べてください：\n・苺\n・林檎\n・みかん\n・葡萄",
+      "choices": [
+        { "text": "苺 > 林檎 > みかん > 葡萄", "next": "q1_wrong" },
+        { "text": "葡萄 > 苺 > 林檎 > みかん", "next": "q1_wrong" },
+        { "text": "林檎 > 葡萄 > 苺 > みかん", "next": "q1_wrong" },
+        { "text": "みかん > 林檎 > 葡萄 > 苺", "next": "q1_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q1_wrong": {
+      "text": "【第1問】結果：不正解\n\n正解は「みかん > 林檎 > 葡萄 > 苺」\n（みかん > りんご > ぶどう > いちご）\n\n惜しかったね！",
+      "choices": [
+        { "text": "次の問題へ", "next": "q2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2": {
+      "text": "【第2問】\n\n次の動物を体が長い順に並べてください：\n・鯨\n・麒麟\n・猫\n・象",
+      "choices": [
+        { "text": "鯨 > 象 > 麒麟 > 猫", "next": "q2_correct" },
+        { "text": "象 > 鯨 > 麒麟 > 猫", "next": "q2_wrong" },
+        { "text": "麒麟 > 象 > 猫 > 鯨", "next": "q2_wrong" },
+        { "text": "猫 > 麒麟 > 象 > 鯨", "next": "q2_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2_correct": {
+      "text": "【第2問】結果：正解！\n\n鯨 > 象 > 麒麟 > 猫\n\nすごい！",
+      "choices": [
+        { "text": "次の問題へ", "next": "q3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2_wrong": {
+      "text": "【第2問】結果：不正解\n\n正解は「鯨 > 象 > 麒麟 > 猫」\n\n惜しい！",
+      "choices": [
+        { "text": "次の問題へ", "next": "q3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3": {
+      "text": "【第3問】\n\n次の料理をカロリーが低い順に並べてください：\n・ラーメン\n・サラダ\n・カレー\n・寿司",
+      "choices": [
+        { "text": "サラダ > 寿司 > カレー > ラーメン", "next": "q3_correct" },
+        { "text": "ラーメン > カレー > 寿司 > サラダ", "next": "q3_wrong" },
+        { "text": "カレー > ラーメン > サラダ > 寿司", "next": "q3_wrong" },
+        { "text": "寿司 > サラダ > ラーメン > カレー", "next": "q3_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3_correct": {
+      "text": "【第3問】結果：正解！\n\nサラダ > 寿司 > カレー > ラーメン\n\nよくできました！",
+      "choices": [
+        { "text": "次の問題へ", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3_wrong": {
+      "text": "【第3問】結果：不正解\n\n正解は「サラダ > 寿司 > カレー > ラーメン」\n\n惜しい！",
+      "choices": [
+        { "text": "次の問題へ", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "result": {
+      "text": "【結果】\n\n全3問クリア！\n\n🎉 お疲れ様でした！ 🎉",
+      "choices": [
+        { "text": "もう一度", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "exit": {
+      "text": "ゲームを終了します。\n\nまた遊んでね！",
+      "choices": []
+    }
+  }
+}

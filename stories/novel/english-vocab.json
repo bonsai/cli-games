@@ -1,0 +1,96 @@
+{
+  "title": "英単語帳",
+  "start": "start",
+  "passages": {
+    "start": {
+      "text": "【英単語帳】\n\n英语の単語を覚えよう！\n不正解だった単語だけが出题されるよ。\n\n全問正解したらクリア！",
+      "choices": [
+        { "text": "始める", "next": "quiz" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "quiz": {
+      "text": "【問題】\n\napple の意味は？",
+      "choices": [
+        { "text": "🍎 りんご", "next": "correct" },
+        { "text": "🍌 バナナ", "next": "wrong" },
+        { "text": "🍇 ぶどう", "next": "wrong" },
+        { "text": "🍊 オレンジ", "next": "wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "correct": {
+      "text": "正解！\n\napple = りんご",
+      "choices": [
+        { "text": "次へ", "next": "next_q" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "wrong": {
+      "text": "不正解...\n\napple = りんご\n\nもう一回出题されるよ。",
+      "choices": [
+        { "text": "次へ", "next": "next_q" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "next_q": {
+      "text": "【問題】\n\nbanana の意味は？",
+      "choices": [
+        { "text": "🍎 りんご", "next": "wrong2" },
+        { "text": "🍌 バナナ", "next": "correct2" },
+        { "text": "🍇 ぶどう", "next": "wrong2" },
+        { "text": "🍊 オレンジ", "next": "wrong2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "correct2": {
+      "text": "正解！\n\nbanana = バナナ",
+      "choices": [
+        { "text": "次へ", "next": "next_q2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "wrong2": {
+      "text": "不正解...\n\nbanana = バナナ\n\nもう一回出题されるよ。",
+      "choices": [
+        { "text": "次へ", "next": "next_q2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "next_q2": {
+      "text": "【問題】\n\ngrape の意味は？",
+      "choices": [
+        { "text": "🍎 りんご", "next": "wrong3" },
+        { "text": "🍌 バナナ", "next": "wrong3" },
+        { "text": "🍇 ぶどう", "next": "correct3" },
+        { "text": "🍊 オレンジ", "next": "wrong3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "correct3": {
+      "text": "正解！\n\ngrape = ぶどう",
+      "choices": [
+        { "text": "次へ", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "wrong3": {
+      "text": "不正解...\n\ngrape = ぶどう\n\nもう一回出题されるよ。",
+      "choices": [
+        { "text": "次へ", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "result": {
+      "text": "【结果】\n\nお疲れ様でした！\n\n【クリア！}",
+      "choices": [
+        { "text": "もう一度", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "exit": {
+      "text": "ゲームを終了します。\n\nまた来てね！",
+      "choices": []
+    }
+  }
+}

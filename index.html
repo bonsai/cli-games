@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLI Game - Browser Edition</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #000;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+#game {
+  max-width: 600px;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+#text {
+  margin-bottom: 20px;
+  min-height: 100px;
+}
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.choice {
+  padding: 12px 16px;
+  background: #111;
+  border: 1px solid #0f0;
+  color: #0f0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.choice:hover, .choice.selected {
+  background: #0f0;
+  color: #000;
+}
+.choice::before {
+  content: '  ';
+}
+.choice.selected::before {
+  content: '▶ ';
+}
+#title {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+}
+@media (max-width: 600px) {
+  body { padding: 10px; font-size: 14px; }
+  .choice { padding: 14px; }
+}
+</style>
+</head>
+<body>
+<div id="game">
+  <div id="title"></div>
+  <div id="text"></div>
+  <div id="choices"></div>
+</div>
+
+<script>
+// ストーリーデータをここに内联（またはfetchで読み込み）
+const stories = {};
+
+// ストーリーファイルを読み込む（同じディレクトリのstories/フォルダから）
+async function loadStories() {
+  const storyFiles = ['unknown-station.json', 'it-quiz-date.json'];
+  for (const file of storyFiles) {
+    try {
+      const res = await fetch('stories/' + file);
+      if (res.ok) {
+        const data = await res.json();
+        stories[file.replace('.json', '')] = data;
+      }
+    } catch (e) {
+      console.error('Failed to load', file, e);
+    }
+  }
+}
+
+let currentStory = null;
+let currentId = null;
+let selectedIdx = 0;
+
+const titleEl = document.getElementById('title');
+const textEl = document.getElementById('text');
+const choicesEl = document.getElementById('choices');
+
+function render() {
+  if (!currentStory) return;
+  const passage = currentStory.passages[currentId];
+  if (!passage) {
+    textEl.textContent = 'エラー: パッセージが見つかりません';
+    return;
+  }
+
+  titleEl.textContent = currentStory.title;
+  textEl.textContent = passage.text;
+  choicesEl.innerHTML = '';
+
+  if (passage.choices && passage.choices.length > 0) {
+    passage.choices.forEach((choice, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'choice' + (idx === selectedIdx ? ' selected' : '');
+      btn.textContent = choice.text;
+      btn.onclick = () => {
+        selectedIdx = idx;
+        choose(idx);
+      };
+      choicesEl.appendChild(btn);
+    });
+  } else {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = '（終了）';
+    btn.onclick = () => location.reload();
+    choicesEl.appendChild(btn);
+  }
+}
+
+function choose(idx) {
+  if (!currentStory) return;
+  const passage = currentStory.passages[currentId];
+  if (passage.choices && passage.choices[idx]) {
+    currentId = passage.choices[idx].next;
+    selectedIdx = 0;
+    render();
+  }
+}
+
+// キーボード操作
+document.addEventListener('keydown', (e) => {
+  if (!currentStory) return;
+  const passage = currentStory.passages[currentId];
+  if (!passage || !passage.choices) return;
+
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    selectedIdx = (selectedIdx - 1 + passage.choices.length) % passage.choices.length;
+    render();
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    selectedIdx = (selectedIdx + 1) % passage.choices.length;
+    render();
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    choose(selectedIdx);
+  }
+});
+
+// ストーリー選択画面
+async function showStorySelect() {
+  await loadStories();
+  const keys = Object.keys(stories);
+  if (keys.length === 0) {
+    titleEl.textContent = 'ストーリーが見つかりません';
+    textEl.textContent = 'stories/ フォルダにJSONファイルを置いてください';
+    return;
+  }
+
+  titleEl.textContent = 'CLI Game - ストーリー選択';
+  textEl.textContent = '遊ぶゲームを選んでください:';
+  choicesEl.innerHTML = '';
+  selectedIdx = 0;
+
+  keys.forEach((key, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (idx === selectedIdx ? ' selected' : '');
+    btn.textContent = key;
+    btn.onclick = () => {
+      selectedIdx = idx;
+      startStory(key);
+    };
+    choicesEl.appendChild(btn);
+  });
+
+  document.addEventListener('keydown', function nav(e) {
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIdx = (selectedIdx - 1 + keys.length) % keys.length;
+      updateSelection(keys);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIdx = (selectedIdx + 1) % keys.length;
+      updateSelection(keys);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      document.removeEventListener('keydown', nav);
+      startStory(keys[selectedIdx]);
+    }
+  });
+}
+
+function updateSelection(keys) {
+  const btns = choicesEl.querySelectorAll('.choice');
+  btns.forEach((btn, i) => {
+    btn.classList.toggle('selected', i === selectedIdx);
+  });
+}
+
+function startStory(key) {
+  currentStory = stories[key];
+  currentId = currentStory.start;
+  selectedIdx = 0;
+  render();
+}
+
+showStorySelect();
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+{
+  "title": "ツンデレソムリエ",
+  "start": "start",
+  "passages": {
+    "start": {
+      "text": "ある日、レストランに入ると...\n\nソムリエ「ようこそ！葡萄酒を選んで差し上げるわ」\n\nソムリエ（このお客様に难しい问题を出题してやろう。解ければ选び直してあげる！）\n\n【ルール：10問中8問正解でクリア】",
+      "choices": [
+        { "text": "クイズを受ける", "next": "q1" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q1": {
+      "text": "【第1問】\n\nソムリエ「まず初级问题よ。フランス五大铭酒がないのはどれ？」\n\nシャトームートン\nシャトーラリオ\nシャトーカルバネ\nシャトーパブ\nシャトーパイ",
+      "choices": [
+        { "text": "シャトーパブ", "next": "q1_correct" },
+        { "text": "シャトーラリオ", "next": "q1_wrong" },
+        { "text": "シャトーパイ", "next": "q1_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q1_correct": {
+      "text": "ソムリエ「ふん、侥幸当てただけよ。次いくわ」",
+      "choices": [
+        { "text": "次へ", "next": "q2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q1_wrong": {
+      "text": "ソムリエ「违うわよ。马鹿吗？正解はシャトーパブよ」",
+      "choices": [
+        { "text": "次へ", "next": "q2" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2": {
+      "text": "【第2問】\n\nソムリエ「ボルドーとブルゴーニュの違い分かる？」\n\n酿造地方\n葡萄种类\n饮用の温度\n全部",
+      "choices": [
+        { "text": "全部", "next": "q2_wrong" },
+        { "text": "葡萄种类", "next": "q2_correct" },
+        { "text": "酿造地方", "next": "q2_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2_correct": {
+      "text": "ソムリエ「まあ Peakね。これは正解よ」",
+      "choices": [
+        { "text": "次へ", "next": "q3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q2_wrong": {
+      "text": "ソムリエ「ちがうわよ。葡萄种类が大きな违いね」",
+      "choices": [
+        { "text": "次へ", "next": "q3" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3": {
+      "text": "【第3問】\n\nソムリエ「スパークリング葡萄酒の王者って 知してる？」\n\nシャンパン\nカバ\nプロセッコ\nサングリア",
+      "choices": [
+        { "text": "シャンパン", "next": "q3_correct" },
+        { "text": "カバ", "next": "q3_wrong" },
+        { "text": "プロセッコ", "next": "q3_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3_correct": {
+      "text": "ソムリエ「流石にそれくらい分かるわよね」",
+      "choices": [
+        { "text": "次へ", "next": "q4" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q3_wrong": {
+      "text": "ソムリエ「违うわよ。シャンパンが王者よ」",
+      "choices": [
+        { "text": "次へ", "next": "q4" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q4": {
+      "text": "【第4問】\n\nソムリエ「白葡萄酒の主要种类3つを言いなさい」\n\nシャルドネ、ソーヴィニヨン、ゲビュルツトラミネール\nシャルドネ、甲州、ピノグリ\nソーヴィニヨン、甲州、リオハ\nシャルドネ、ソーヴィニヨン、甲州",
+      "choices": [
+        { "text": "シャルドネ、ソーヴィニヨン、甲州", "next": "q4_correct" },
+        { "text": "シャルドネ、甲州、ピノグリ", "next": "q4_wrong" },
+        { "text": "シャルドネ、ソーヴィニヨン、ゲビュルツトラミネール", "next": "q4_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q4_correct": {
+      "text": "ソムリエ「正解ね。稍し知识があるようね」",
+      "choices": [
+        { "text": "次へ", "next": "q5" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q4_wrong": {
+      "text": "ソムリエ「违うわよ。基本中の基本でしょう！」",
+      "choices": [
+        { "text": "次へ", "next": "q5" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q5": {
+      "text": "【第5問】\n\nソムリエ「ロゼ葡萄酒って怎么做成るか知してる？」\n\n赤葡萄だけを发酵\n白葡萄と赤葡萄を混ぜる\n葡萄の皮を短く渍ける\n全部正しい",
+      "choices": [
+        { "text": "全部正しい", "next": "q5_wrong" },
+        { "text": "葡萄の皮を短く渍ける", "next": "q5_correct" },
+        { "text": "白葡萄と赤葡萄を混ぜる", "next": "q5_correct" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q5_correct": {
+      "text": "ソムリエ「そうなの。知らなかったでしょう？」",
+      "choices": [
+        { "text": "次へ", "next": "q6" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q5_wrong": {
+      "text": "ソムリエ「全部は违うわよ。皮の渍け方がメインよ」",
+      "choices": [
+        { "text": "次へ", "next": "q6" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q6": {
+      "text": "【第6問】\n\nソムリエ「年代物の葡萄酒、最も适度な保存温度はどれ？」\n\n10〜13度\n14〜18度\n5〜8度\n20度以上",
+      "choices": [
+        { "text": "10〜13度", "next": "q6_correct" },
+        { "text": "14〜18度", "next": "q6_wrong" },
+        { "text": "5〜8度", "next": "q6_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q6_correct": {
+      "text": "ソムリエ「流石ね♪ そこは正解よ」",
+      "choices": [
+        { "text": "次へ", "next": "q7" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q6_wrong": {
+      "text": "ソムリエ「そうじゃないわよ。正解は10〜13度よ」",
+      "choices": [
+        { "text": "次へ", "next": "q7" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q7": {
+      "text": "【第7問】\n\nソムリエ「ワインの栓、代表的な种类はいくつか知ってる？」\n\n2种类\n3种类\n4种类\n5种类",
+      "choices": [
+        { "text": "2种类", "next": "q7_wrong" },
+        { "text": "3种类", "next": "q7_correct" },
+        { "text": "4种类", "next": "q7_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q7_correct": {
+      "text": "ソムリエ「正解よ。コルク、スクリュー、王冠の3つね」",
+      "choices": [
+        { "text": "次へ", "next": "q8" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q7_wrong": {
+      "text": "ソムリエ「违うわよ。正解は3つよ、コルクとスクリューと王冠」",
+      "choices": [
+        { "text": "次へ", "next": "q8" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q8": {
+      "text": "【第8問】\n\nソムリエ「甘口の代表葡萄品种はどれ？」\n\nリースリング\nカベルネ\nピノノワール\nシラー",
+      "choices": [
+        { "text": "リースリング", "next": "q8_correct" },
+        { "text": "カベルネ", "next": "q8_wrong" },
+        { "text": "ピノノワール", "next": "q8_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q8_correct": {
+      "text": "ソムリエ「そう、リースリングは甘口の代表ね」",
+      "choices": [
+        { "text": "次へ", "next": "q9" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q8_wrong": {
+      "text": "ソムリエ「违うわよ。リースリングが代表よ」",
+      "choices": [
+        { "text": "次へ", "next": "q9" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q9": {
+      "text": "【第9問】\n\nソムリエ「ヴィンテージって latin語で何意味する？」\n\nその年の葡萄\n酿造年\n葡萄の収穫年\n年以上",
+      "choices": [
+        { "text": "その年の葡萄", "next": "q9_wrong" },
+        { "text": "葡萄の収穫年", "next": "q9_correct" },
+        { "text": "酿造年", "next": "q9_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q9_correct": {
+      "text": "ソムリエ「流石ね。马鹿じゃないのね」",
+      "choices": [
+        { "text": "次へ", "next": "q10" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q9_wrong": {
+      "text": "ソムリエ「违うわよ。正解は葡萄の収穫年よ」",
+      "choices": [
+        { "text": "次へ", "next": "q10" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q10": {
+      "text": "【第10問】\n\nソムリエ「最后よ。ソムリエのフランス语での正しい発音は？」\n\n sommelier \n sommelier\n sommelia\n sommier",
+      "choices": [
+        { "text": " sommelier", "next": "q10_correct" },
+        { "text": " sommelia", "next": "q10_wrong" },
+        { "text": " sommier", "next": "q10_wrong" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q10_correct": {
+      "text": "ソムリエ「最期まで紧张しちゃった？まあ、回应しよう」",
+      "choices": [
+        { "text": "答えを見る", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "q10_wrong": {
+      "text": "ソムリエ「最期まで紧张しちゃった？まあ、回应しよう」",
+      "choices": [
+        { "text": "答えを見る", "next": "result" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "result": {
+      "text": "【答え合わせ】\n\n...\n\nソムリエ「8問以上正解ね。まあ、客户が优秀だとはまだ言えないけど...」\n\nソムリエ（内心：このお客様、以外と葡萄酒詳しい...でも、私が选ぶ葡萄酒はもっとすごいものだから！）\n\n【クリア！ソムリエがあなたのWineを選んでくれます】",
+      "choices": [
+        { "text": "もう一度遊ぶ", "next": "start" },
+        { "text": "トップに戻る", "next": "exit" }
+      ]
+    },
+    "exit": {
+      "text": "ゲームを終われます。\n\nまた来てね！",
+      "choices": []
+    }
+  }
+}
